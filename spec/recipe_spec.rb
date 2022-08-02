@@ -10,7 +10,7 @@ RSpec.describe Recipe do
   end
 
   it 'exists' do
-    expect(@recipe1).to be_instance_of(Reciperecipe1)
+    expect(@recipe1).to be_instance_of(Recipe)
   end
 
   it 'has a name' do
