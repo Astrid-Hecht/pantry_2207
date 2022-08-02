@@ -19,4 +19,8 @@ class Recipe
   def add_ingredient(ingredient, amount)
     @ingredients[ingredient] += amount
   end
+
+  def total_calories
+    @ingredients.sum { |ingredient, quant| (ingredient.calories * quant)}
+  end
 end
