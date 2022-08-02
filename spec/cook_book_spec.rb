@@ -16,7 +16,7 @@ RSpec.describe Recipe do
   end
 
   it 'exists' do
-    expect(@cookbook).to be_instance_of(Recipe)
+    expect(@cookbook).to be_instance_of(CookBook)
   end
 
   it 'starts with empty recipe array' do
