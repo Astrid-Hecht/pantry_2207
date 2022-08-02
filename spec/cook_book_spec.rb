@@ -60,7 +60,7 @@ RSpec.describe CookBook do
     end
   end
 
-  describe 'Iteration 3' do
+  describe 'Iteration 4' do
     before(:all) do
       @ingredient1 = Ingredient.new({ name: "Cheese", unit: "C", calories: 100 })
       @ingredient2 = Ingredient.new({ name: "Macaroni", unit: "oz", calories: 30 })
@@ -79,16 +79,17 @@ RSpec.describe CookBook do
       @cookbook.add_recipe(@recipe2)
     end
 
+
     it 'can return date and time in correct format' do
       time = Time.new
       expected = "#{time.month}-#{time.day}-#{time.year}"
       expect(@cookbook.date).to eq(expected)
     end
 
-    it 'can make a summary' do 
+    it 'can make a summary' do
       expect(@cookbook.summary).to eq(
         [{:name=>"Mac and Cheese", :details=>{:ingredients=>[{:ingredient=>"Macaroni", :amount=>"8 oz"}, {:ingredient=>"Cheese", :amount=>"2 C"}], :total_calories=>440}}, 
-        {:name=>"Burger", :details=>{:ingredients=>[{:ingredient=>"Ground Beef", :amount=>"4 oz"}, {:ingredient=>"Bun", :amount=>"100 g"}], :total_calories=>500}}])
+         {:name=>"Burger", :details=>{:ingredients=>[{:ingredient=>"Ground Beef", :amount=>"4 oz"}, {:ingredient=>"Bun", :amount=>"100 g"}], :total_calories=>500}}])
     end
   end
 end
