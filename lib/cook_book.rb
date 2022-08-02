@@ -27,8 +27,8 @@ class CookBook
     @recipes.each do |recipe|
       hash = Hash.new
       hash[:name] = recipe.name
-      hash[:details] = recipe.ingredients_required.reduce(Hash.new) do |hash2, ingredient|
-        hash2[:ingredients] = recipe.ingredients_required.map { |ingred| { ingredient: ingred[0].name, amount: "#{ingred[1]} #{ingred[0].unit}" } }
+      hash[:details] = recipe.ingredients_required.reduce(Hash.new) do |hash2|
+        hash2[:ingredients] = recipe.ingredients_required.sort_by { |sort| sort[0].calories * sort[1] }.reverse.map { |ingred| { ingredient: ingred[0].name, amount: "#{ingred[1]} #{ingred[0].unit}" } }
         hash2[:total_calories] = recipe.total_calories
         hash2
       end
