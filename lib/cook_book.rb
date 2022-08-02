@@ -29,10 +29,11 @@ class CookBook
       hash[:name] = recipe.name
       hash[:details] = recipe.ingredients_required.reduce(Hash.new) do |hash2, ingredient|
         hash2[:ingredients] = recipe.ingredients_required.map { |ingred| { ingredient: ingred[0].name, amount: "#{ingred[1]} #{ingred[0].unit}" } }
-        hash2[:total_cal] = recipe.total_calories
+        hash2[:total_calories] = recipe.total_calories
         hash2
       end
       summary << hash
     end
+    summary
   end
 end
