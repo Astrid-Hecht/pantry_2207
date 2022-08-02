@@ -1,3 +1,5 @@
+require_relative './ingredient'
+
 class Recipe
   attr_reader :name
 

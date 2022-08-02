@@ -32,4 +32,3 @@ RSpec.describe Recipe do
     expect(@recipe1.ingredients).to eq([@ingredient1, @ingredient2])
   end
 end
-
