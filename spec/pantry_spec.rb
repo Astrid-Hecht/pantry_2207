@@ -4,7 +4,7 @@ RSpec.describe Pantry do
   before(:all) do
     @ingredient1 = Ingredient.new( {name: "Cheese", unit: "oz", calories: 50} )
     @ingredient2 = Ingredient.new( {name: "Macaroni", unit: "oz", calories: 200} )
-    @pantry = pantry.new
+    @pantry = Pantry.new
   end
 
   it 'exists' do
